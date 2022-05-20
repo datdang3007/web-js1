@@ -31,41 +31,16 @@ var flag = 0
 for (i = 0 ; i < EX1.length ; i++) {
     if (EX1.charAt(i) === "_") {
         flag = 1
+        privateEmail += "_"
+        i++
     } else if (EX1.charAt(i) === "@") {
         flag = 0
     }
     
     if (flag === 0) {
-        privateEmail = privateEmail + EX1.charAt(i)
+        privateEmail += EX1.charAt(i)
     } else if (flag === 1) {
-        flag = 2
-        privateEmail = privateEmail + "_"
-    } else if (flag === 2) {
-        flag = 2
-        privateEmail = privateEmail + "*"
-    }
-}
-console.log(privateEmail)
-
-var EX2 = "david_thuan@gmail.com"
-
-var privateEmail = ""
-var flag = 0
-for (i = 0 ; i < EX2.length ; i++) {
-    if (EX2.charAt(i) === "_") {
-        flag = 1
-    } else if (EX2.charAt(i) === "@") {
-        flag = 0
-    }
-    
-    if (flag === 0) {
-        privateEmail = privateEmail + EX2.charAt(i)
-    } else if (flag === 1) {
-        flag = 2
-        privateEmail = privateEmail + "_"
-    } else if (flag === 2) {
-        flag = 2
-        privateEmail = privateEmail + "*"
+        privateEmail += "*"
     }
 }
 console.log(privateEmail)
